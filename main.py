@@ -1,17 +1,15 @@
-K=int(input()) #метры от начала улицы
-N=int(input()) #расстояние пройденное
-H=1
-M=K
-G=M*-1
-while K<N:
-    K=M
-    K*=H
-    H+=1
-    G+=M
-K-=N
-G=N-G
-if K<G or K==G:
+K = int(input("расстояние между остановками: "))
+N = int(input("расстояние пройденное: "))
+number_station = 1
+distance = K
+dist_station = distance*-1
+while K < N:
+    K = distance*number_station
+    number_station += 1
+    dist_station += distance
+K -= N
+dist_station = N-dist_station
+if K < dist_station or K == dist_station:
     print(K)
 else:
-    print(G)
-
+    print(dist_station)
