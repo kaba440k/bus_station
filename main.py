@@ -1,14 +1,14 @@
 K = int(input("расстояние между остановками: "))
-N = int(input("расстояние пройденное: "))
+N = int(input("расстояние пройденное Светланой: "))
 number_station = 1
 distance = K
-dist_station = distance*-1
+previous_station = distance*-1  # предыдущая остановка
 while K < N:
     K = distance*number_station
     number_station += 1
-    dist_station += distance
-K -= N
-dist_station = N-dist_station
+    previous_station += distance
+K -= N  # расстояние от следующей остановки до Светланы
+dist_station = N-previous_station  # расстояние от предыдущей остановки до Светланы
 if K < dist_station or K == dist_station:
     print(K)
 else:
